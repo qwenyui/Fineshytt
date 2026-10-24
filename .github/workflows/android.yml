@@ -24,12 +24,25 @@ jobs:
           cache: gradle
 
       - name: Prepare Secrets Configuration
+        env:
+          INPUT_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
-          touch .env
-          echo "GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}" >> .env
+          if [ -n "$INPUT_KEY" ]; then
+            echo "GEMINI_API_KEY=$INPUT_KEY" > .env
+          else
+            echo "GEMINI_API_KEY=MY_GEMINI_API_KEY" > .env
+          fi
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew || true
 
       - name: Build with Gradle
-        run: gradle assembleDebug --stacktrace
+        run: |
+          if [ -f "./gradlew" ]; then
+            ./gradlew assembleDebug --stacktrace
+          else
+            gradle assembleDebug --stacktrace
+          fi
 
       - name: Upload Debug APK Artifact
         uses: actions/upload-artifact@v4
