@@ -313,8 +313,8 @@ private fun TopHeaderBar(
     ) {
         Column {
             Text(
-                text = "AI_STUDY_PARTNER",
-                fontSize = 13.sp,
+                text = "INEFFAST",
+                fontSize = 14.sp,
                 fontFamily = FontFamily.Monospace,
                 fontWeight = FontWeight.Black,
                 color = MangaWhite,

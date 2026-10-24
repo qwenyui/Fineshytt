@@ -1,6 +1,6 @@
 {
-  "name": "AI Study Partner",
-  "description": "Interactive visual novel anime study companion powered by Gemini flash-lite with real-time emotion reactions, study notes analysis, and embedded offline voice synthesis.",
+  "name": "IneffaST",
+  "description": "Monochrome cyberpunk study companion and voice assistant powered by Gemini flash-lite.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

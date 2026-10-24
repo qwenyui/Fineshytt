@@ -22,6 +22,6 @@ dependencyResolutionManagement {
   }
 }
 
-rootProject.name = "AI Study Partner"
+rootProject.name = "IneffaST"
 
 include(":app")
